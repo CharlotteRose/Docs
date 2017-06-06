@@ -1,0 +1,94 @@
+Ascii Doc Notes
+
+Pg. ==> paragraph creation is employed by the presence of two distinct lines.
+These lines should be separated  by at least ONE blank line.
+
+[%hardbreaks] ==> hardbreaks are used when the desired outcome is a printed format
+where lines are separated via the presnce of a "." (period punctiation mark)
+
+N.Pg. ==> A normal paragraph.
+
+A sequence of lines that begin with at least one space is a literal paragraph.
+Literal paragraphs are treated as preformatted text.
+The text is shown in a fixed-width font <=== where is this specified? Is there anyone that has control of
+and endlines are preserved. <==== what does this mean?
+
+
+DOC BOOK
+
+One can make almost any item in an line the source of a link. Consider:
+
+<section xml:id="dir">
+  <title>DIR command</title>
+  <para>This command is a synonym for
+    <command linkend="dir">DIR</command> command. <======= indicates command is a linked to a directory path
+  </para>
+</section>
+
+
+
+  EXAMPLE:
+  <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "../docbook-xml-4.5/docbookx.dtd">
+<article>
+== Docbook Article Example
+    <articleinfo>
+=== DocBook Intro
+        <author>
+            <firstname>scoots/firstname>
+            <surname>hamilton</surname>
+        </author>
+        <volumenum>1</volumenum>
+    <chapter>
+=== chapter
+    === primary_section
+            section contents
+        === sub_section
+                sub-section contents
+image::title.png[]
+                     </imageobject>
+                    <textobject>
+                        <phrase>Image description</phrase>
+                    </textobject>
+            </mediaobject>
+    </chapter>
+    <chapter>
+=== This is the second chapter
+    === My Title
+            More...
+    === Other title
+            Blabla
+    </chapter>
+================================================================================
+================================================================================
+================================================================================
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <!DOCTYPE article_name PUBLIC "-//<path>//<to_your_doc> XML V4.5//<lang>" "../docbook-xml-4.5/docbookx.dtd">
+    <book>
+    == Docbook Book Example
+        <chapter>
+    === This is the first chapter
+        === First section in the chapter
+                Random text.
+        === Second section in the chapter
+                Other random text
+        </chapter>
+        <chapter>
+    === This is the second chapter
+        === My Title
+                More...
+        === Other title
+                Blabla
+            </chapter>
+    </book>
+
+href attribute from the XLink namespace was added to the same set of inline elements
+      1 <article xmlns="http://docbook.org/ns/docbook"
+      2          xmlns:xl="http://www.w3.org/1999/xlink" version="5.0"> <============= declaration of xlink namespace
+          <title>Test article</title>
+      4
+          <para>
+      6     <application xl:href="http://www.gnu.org/software/emacs/">Emacs</application>
+            is my favourite text editor.</para>
+      8     ...
+        </article>
